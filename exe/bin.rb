@@ -15,7 +15,7 @@ class << ((bin = Struct.new(:rb).new).rb = Object.new)
   end
 
   def open_in_editor
-    exec("vim #{path}")
+    Process.wait exec("vim #{path}")
   end
 
   def make_executable
