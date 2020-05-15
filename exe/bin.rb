@@ -11,12 +11,12 @@ SKELETON
 
 bin = ARGV.first
 
-abort "!ARGV" unless bin
+(puts "!ARGV.first"; abort) unless bin
 
 path = File.expand_path("~/bin/#{bin}")
 
-exec("vi #{path}") if File.exist? path
+exec("vim #{path}") if File.exist? path
 
 File.write(path, skeleton)
 
-exec("chmod +x #{path}; vi #{path}")
+exec("chmod +x #{path}; vim #{path}")
